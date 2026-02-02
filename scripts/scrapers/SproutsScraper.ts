@@ -214,7 +214,7 @@ export class SproutsScraper extends BaseScraper {
 }
 
 /** Sprouts weekly ad runs Wednesday to Tuesday */
-function getSproutsWeekDates(): { startDate: string; expiryDate: string } {
+export function getSproutsWeekDates(): { startDate: string; expiryDate: string } {
   const now = new Date();
   const dayOfWeek = now.getDay(); // 0=Sun, 3=Wed
   // Days since most recent Wednesday

@@ -1,14 +1,15 @@
-# Bay Area Grocery Deals (湾区省钱宝)
+# Bay Area Deals (湾区省钱宝)
 
-A bilingual (English/Chinese) web app that aggregates weekly grocery deals from Bay Area supermarkets, helping local residents discover discounts and save money.
+A bilingual (English/Chinese) web app that aggregates weekly deals from Bay Area supermarkets — not just groceries, but all supermarket deals including electronics, clothing, health, and more.
 
 ## Features
 
 - **9 stores**: Costco, Safeway, Whole Foods, 99 Ranch, H Mart, Trader Joe's, Target, Sprouts, Walmart
-- **10 categories**: Produce, Meat & Seafood, Dairy, Bakery, Snacks, Beverages, Frozen, Pantry, Household, Personal Care
-- **Interactive map**: Leaflet map with deal clusters by city, address search, radius filtering
+- **19 categories**: Produce, Meat & Seafood, Dairy, Bakery, Pantry, Snacks, Beverages, Frozen, Household, Personal Care, Electronics, Clothing, Health, Baby, Pet, Outdoor, Auto, Office, Other
+- **Interactive map**: Leaflet map with deal clusters by city, address/zip code search, radius filtering
+- **Product images**: Thumbnails scraped from store pages when available
 - **Bilingual UI**: Toggle between English and Simplified Chinese
-- **22 Bay Area cities** across South Bay, Peninsula, SF, and East Bay
+- **41 Bay Area cities** across South Bay, Peninsula, SF, and East Bay
 - **Automated scraping**: Playwright-based scrapers fetch real deals weekly
 
 ## Tech Stack

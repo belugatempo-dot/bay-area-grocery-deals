@@ -1,10 +1,10 @@
-# Architecture — Bay Area Grocery Deals
+# Architecture — Bay Area Deals
 
 > Last Updated: February 1, 2026
 
 ## Overview
 
-Bay Area Grocery Deals is a bilingual (EN/ZH) React SPA that aggregates weekly grocery discounts from Bay Area supermarkets. It consists of two main subsystems:
+Bay Area Deals is a bilingual (EN/ZH) React SPA that aggregates weekly deals (grocery, electronics, clothing, health, and more) from Bay Area supermarkets. It consists of two main subsystems:
 
 1. **Frontend** — React + TypeScript + Vite web app with interactive map
 2. **Scraper Framework** — Modular Playwright-based scrapers with automated translation
@@ -70,7 +70,7 @@ Bay Area Grocery Deals is a bilingual (EN/ZH) React SPA that aggregates weekly g
 App
 ├── Header
 │   ├── LanguageToggle (EN ↔ 中文)
-│   └── LocationSelector (22 Bay Area cities, 4 regions)
+│   └── LocationSelector (41 Bay Area cities, 4 regions)
 ├── SearchBar (debounced full-text search)
 ├── StoreFilter (toggle chips by store)
 ├── CategoryFilter (toggle chips by category)
@@ -78,7 +78,7 @@ App
 │   └── DealCard × N
 │       └── DealModal (detail overlay)
 ├── DealMap (lazy-loaded Leaflet)
-│   ├── AddressSearch
+│   ├── AddressSearch (address or zip code via Nominatim)
 │   ├── MapPopupContent
 │   └── MapToggle
 └── Footer
@@ -134,7 +134,7 @@ scrape() → validate() → translateBatch() → assignCategory() → toDeal() �
 | Scrape | `scrapers/*Scraper.ts` | Playwright browser automation per store |
 | Validate | `utils/validate.ts` | Required fields, price logic, date format checks |
 | Translate | `utils/translate.ts` | Claude CLI batch EN→ZH; file cache at `scripts/.cache/translations.json` |
-| Categorize | `utils/categorize.ts` | Keyword matching → 10 categories (fallback: "pantry") |
+| Categorize | `utils/categorize.ts` | Keyword matching → 19 categories (fallback: "other") |
 | Merge | `utils/merge.ts` | Replace store's deals in `deals.json`, remove expired, reassign IDs |
 
 ### BaseScraper Class
@@ -165,7 +165,7 @@ Subclasses only need to implement `scrape()` and declare `storeId`/`locations`.
 | Adapter | Scraping Method | Anti-Bot Measures |
 |---------|----------------|-------------------|
 | `CostcoScraper` | Playwright, 7 CSS selector strategies | Custom UA, random delays, scroll-triggered lazy load |
-| `SproutsScraper` | Playwright, multiple selector fallbacks | Custom UA, delays |
+| `SproutsScraper` | Playwright, h3 text blob parsing, product image capture | Custom UA, delays, scroll loading |
 
 ### Retry Logic (`utils/retry.ts`)
 
@@ -195,7 +195,7 @@ Subclasses only need to implement `scrape()` and declare `storeId`/`locations`.
 interface Deal {
   id: string;          // "{storeId}-{seq}", e.g. "costco-001"
   storeId: string;
-  categoryId: string;  // one of 10 categories
+  categoryId: string;  // one of 19 categories
   title: string;
   titleZh: string;
   description: string;
@@ -210,14 +210,15 @@ interface Deal {
   locations: string[]; // city IDs
   details?: string;
   detailsZh?: string;
+  imageUrl?: string;   // product image URL (scraped when available)
 }
 ```
 
 ### Supporting Data
 
 - **stores.json**: 9 stores with `id`, `name`, `nameZh`, brand `color`, `cities[]`
-- **categories.json**: 10 categories with `id`, `name`, `nameZh`, `icon` (emoji)
-- **cities.ts**: 22 Bay Area cities in 4 regions with lat/lng coordinates
+- **categories.json**: 19 categories with `id`, `name`, `nameZh`, `icon` (emoji)
+- **cities.ts**: 41 Bay Area cities in 4 regions with lat/lng coordinates
 
 ---
 

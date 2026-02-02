@@ -139,7 +139,7 @@ export class CostcoScraper extends BaseScraper {
 
 // --- Price/date parsing (migrated from scrape-costco.ts) ---
 
-function parseDates(dateStr: string): { startDate: string; expiryDate: string } | null {
+export function parseDates(dateStr: string): { startDate: string; expiryDate: string } | null {
   const patterns = [
     /(\d{1,2})\/(\d{1,2})\/(\d{2,4})\s*[-–—]\s*(\d{1,2})\/(\d{1,2})\/(\d{2,4})/,
     /(\d{1,2})\/(\d{1,2})\/(\d{2,4})\s*(?:through|thru|to)\s*(\d{1,2})\/(\d{1,2})\/(\d{2,4})/i,
@@ -160,7 +160,7 @@ function parseDates(dateStr: string): { startDate: string; expiryDate: string } 
   return null;
 }
 
-function parsePrice(priceStr: string): { originalPrice: number; salePrice: number } | null {
+export function parsePrice(priceStr: string): { originalPrice: number; salePrice: number } | null {
   const amounts = priceStr.match(/\$[\d,.]+/g);
   if (amounts && amounts.length >= 1) {
     const parsed = amounts.map((a) => parseFloat(a.replace(/[$,]/g, '')));

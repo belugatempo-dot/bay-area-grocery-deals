@@ -18,7 +18,17 @@
       "san_jose",
       "sunnyvale",
       "mountain_view",
-      "fremont"
+      "redwood_city",
+      "san_francisco",
+      "daly_city",
+      "south_sf",
+      "fremont",
+      "hayward",
+      "richmond",
+      "danville",
+      "livermore",
+      "gilroy",
+      "foster_city"
     ],
     "details": "Limit 2 per member. Available while supplies last.",
     "detailsZh": "每位会员限购2份。售完即止。"
@@ -42,8 +52,16 @@
       "san_jose",
       "milpitas",
       "cupertino",
+      "mountain_view",
+      "daly_city",
       "fremont",
-      "richmond"
+      "newark",
+      "richmond",
+      "union_city",
+      "foster_city",
+      "concord",
+      "dublin",
+      "pleasanton"
     ],
     "details": "Weekly special. No limit.",
     "detailsZh": "每周特价。不限购。"
@@ -67,10 +85,41 @@
       "san_jose",
       "sunnyvale",
       "santa_clara",
+      "cupertino",
+      "milpitas",
+      "mountain_view",
+      "los_altos",
+      "campbell",
+      "saratoga",
+      "los_gatos",
       "palo_alto",
+      "menlo_park",
+      "redwood_city",
+      "san_mateo",
+      "foster_city",
+      "burlingame",
+      "san_bruno",
+      "south_sf",
+      "daly_city",
+      "san_carlos",
+      "belmont",
       "san_francisco",
       "fremont",
-      "oakland"
+      "newark",
+      "union_city",
+      "hayward",
+      "san_leandro",
+      "alameda",
+      "oakland",
+      "berkeley",
+      "richmond",
+      "walnut_creek",
+      "concord",
+      "pleasanton",
+      "dublin",
+      "livermore",
+      "san_ramon",
+      "danville"
     ],
     "details": "Clip digital coupon in Safeway app.",
     "detailsZh": "需在 Safeway App 中领取电子优惠券。"
@@ -93,9 +142,20 @@
     "locations": [
       "san_jose",
       "cupertino",
+      "los_altos",
+      "campbell",
+      "los_gatos",
       "palo_alto",
+      "redwood_city",
+      "san_mateo",
       "san_francisco",
-      "berkeley"
+      "fremont",
+      "oakland",
+      "berkeley",
+      "walnut_creek",
+      "pleasanton",
+      "dublin",
+      "san_ramon"
     ],
     "details": "Prime member deal. Additional 10% off for Prime members.",
     "detailsZh": "Prime 会员专享。Prime 会员可再享9折。"
@@ -119,11 +179,26 @@
       "san_jose",
       "sunnyvale",
       "cupertino",
+      "campbell",
+      "los_gatos",
       "mountain_view",
       "palo_alto",
+      "menlo_park",
+      "redwood_city",
+      "san_mateo",
+      "san_carlos",
       "san_francisco",
+      "daly_city",
       "fremont",
-      "oakland"
+      "oakland",
+      "berkeley",
+      "walnut_creek",
+      "concord",
+      "pleasanton",
+      "dublin",
+      "livermore",
+      "san_ramon",
+      "danville"
     ],
     "details": "Limited time price reduction.",
     "detailsZh": "限时降价。"
@@ -147,7 +222,9 @@
       "san_jose",
       "santa_clara",
       "milpitas",
-      "fremont"
+      "fremont",
+      "oakland",
+      "san_francisco"
     ],
     "details": "H Mart weekend special.",
     "detailsZh": "H Mart 周末特价。"
@@ -171,9 +248,28 @@
       "san_jose",
       "sunnyvale",
       "santa_clara",
+      "cupertino",
+      "milpitas",
+      "mountain_view",
+      "campbell",
+      "morgan_hill",
+      "gilroy",
+      "redwood_city",
+      "san_mateo",
+      "san_bruno",
+      "south_sf",
+      "daly_city",
       "san_francisco",
       "fremont",
-      "oakland"
+      "hayward",
+      "san_leandro",
+      "oakland",
+      "richmond",
+      "walnut_creek",
+      "concord",
+      "pleasanton",
+      "dublin",
+      "livermore"
     ],
     "details": "Target Circle offer. Same-day delivery available.",
     "detailsZh": "Target Circle 优惠。支持当日配送。"
@@ -197,8 +293,15 @@
       "san_jose",
       "milpitas",
       "mountain_view",
+      "gilroy",
+      "morgan_hill",
       "fremont",
-      "hayward"
+      "hayward",
+      "union_city",
+      "richmond",
+      "san_leandro",
+      "livermore",
+      "dublin"
     ],
     "details": "Rollback price. Online order with pickup available.",
     "detailsZh": "回滚价。可在线下单到店取货。"
@@ -221,9 +324,18 @@
     "locations": [
       "san_jose",
       "sunnyvale",
+      "mountain_view",
       "redwood_city",
       "san_francisco",
-      "fremont"
+      "daly_city",
+      "south_sf",
+      "fremont",
+      "hayward",
+      "richmond",
+      "danville",
+      "livermore",
+      "gilroy",
+      "foster_city"
     ],
     "details": "In-warehouse only. Bakery department.",
     "detailsZh": "仅限店内购买。烘焙区。"
@@ -247,8 +359,16 @@
       "san_jose",
       "milpitas",
       "cupertino",
+      "mountain_view",
       "daly_city",
-      "fremont"
+      "fremont",
+      "newark",
+      "richmond",
+      "union_city",
+      "foster_city",
+      "concord",
+      "dublin",
+      "pleasanton"
     ],
     "details": "Weekend special. First come first served.",
     "detailsZh": "周末特价。先到先得。"
@@ -271,11 +391,42 @@
     "locations": [
       "san_jose",
       "sunnyvale",
+      "santa_clara",
+      "cupertino",
+      "milpitas",
       "mountain_view",
+      "los_altos",
+      "campbell",
+      "saratoga",
+      "los_gatos",
+      "palo_alto",
+      "menlo_park",
+      "redwood_city",
+      "san_mateo",
+      "foster_city",
+      "burlingame",
+      "san_bruno",
+      "south_sf",
+      "daly_city",
+      "san_carlos",
+      "belmont",
       "san_francisco",
       "fremont",
+      "newark",
+      "union_city",
       "hayward",
-      "oakland"
+      "san_leandro",
+      "alameda",
+      "oakland",
+      "berkeley",
+      "richmond",
+      "walnut_creek",
+      "concord",
+      "pleasanton",
+      "dublin",
+      "livermore",
+      "san_ramon",
+      "danville"
     ],
     "details": "Buy 2 get 1 free with Club Card.",
     "detailsZh": "凭 Club Card 买二送一。"
@@ -298,11 +449,20 @@
     "locations": [
       "san_jose",
       "cupertino",
+      "los_altos",
+      "campbell",
+      "los_gatos",
       "palo_alto",
+      "redwood_city",
       "san_mateo",
       "san_francisco",
       "fremont",
-      "oakland"
+      "oakland",
+      "berkeley",
+      "walnut_creek",
+      "pleasanton",
+      "dublin",
+      "san_ramon"
     ],
     "details": "Sale valid on all 365 brand frozen vegetables.",
     "detailsZh": "所有 365 品牌冷冻蔬菜均参与活动。"
@@ -327,7 +487,8 @@
       "santa_clara",
       "milpitas",
       "fremont",
-      "oakland"
+      "oakland",
+      "san_francisco"
     ],
     "details": "Imported directly from Korea.",
     "detailsZh": "韩国直接进口。"
@@ -351,10 +512,26 @@
       "san_jose",
       "sunnyvale",
       "cupertino",
+      "campbell",
+      "los_gatos",
+      "mountain_view",
       "palo_alto",
+      "menlo_park",
+      "redwood_city",
+      "san_mateo",
+      "san_carlos",
       "san_francisco",
+      "daly_city",
       "fremont",
-      "berkeley"
+      "oakland",
+      "berkeley",
+      "walnut_creek",
+      "concord",
+      "pleasanton",
+      "dublin",
+      "livermore",
+      "san_ramon",
+      "danville"
     ],
     "details": "Temporarily reduced price.",
     "detailsZh": "临时降价。"
@@ -380,8 +557,15 @@
       "mountain_view",
       "redwood_city",
       "san_francisco",
+      "daly_city",
+      "south_sf",
       "fremont",
-      "hayward"
+      "hayward",
+      "richmond",
+      "danville",
+      "livermore",
+      "gilroy",
+      "foster_city"
     ],
     "details": "Instant savings. No coupon needed.",
     "detailsZh": "立减优惠。无需优惠券。"
@@ -389,7 +573,7 @@
   {
     "id": "target-002",
     "storeId": "target",
-    "categoryId": "personal",
+    "categoryId": "personal_care",
     "title": "CeraVe Moisturizing Cream (19oz)",
     "titleZh": "CeraVe 保湿面霜 (19盎司)",
     "description": "Dermatologist recommended daily moisturizer.",
@@ -404,10 +588,29 @@
     "locations": [
       "san_jose",
       "sunnyvale",
+      "santa_clara",
       "cupertino",
+      "milpitas",
+      "mountain_view",
+      "campbell",
+      "morgan_hill",
+      "gilroy",
+      "redwood_city",
+      "san_mateo",
+      "san_bruno",
+      "south_sf",
+      "daly_city",
       "san_francisco",
       "fremont",
-      "oakland"
+      "hayward",
+      "san_leandro",
+      "oakland",
+      "richmond",
+      "walnut_creek",
+      "concord",
+      "pleasanton",
+      "dublin",
+      "livermore"
     ],
     "details": "Target Circle deal + $5 gift card with $20 beauty purchase.",
     "detailsZh": "Target Circle 优惠 + 美妆消费满$20送$5礼卡。"
@@ -431,9 +634,16 @@
       "san_jose",
       "milpitas",
       "cupertino",
+      "mountain_view",
       "daly_city",
       "fremont",
-      "union_city"
+      "newark",
+      "richmond",
+      "union_city",
+      "foster_city",
+      "concord",
+      "dublin",
+      "pleasanton"
     ],
     "details": "In-store promotion.",
     "detailsZh": "店内促销。"
@@ -457,9 +667,15 @@
       "san_jose",
       "milpitas",
       "mountain_view",
+      "gilroy",
+      "morgan_hill",
       "fremont",
       "hayward",
-      "union_city"
+      "union_city",
+      "richmond",
+      "san_leandro",
+      "livermore",
+      "dublin"
     ],
     "details": "Rollback price.",
     "detailsZh": "回滚价。"
@@ -482,11 +698,42 @@
     "locations": [
       "san_jose",
       "sunnyvale",
+      "santa_clara",
+      "cupertino",
+      "milpitas",
+      "mountain_view",
+      "los_altos",
+      "campbell",
+      "saratoga",
+      "los_gatos",
       "palo_alto",
+      "menlo_park",
+      "redwood_city",
       "san_mateo",
+      "foster_city",
+      "burlingame",
+      "san_bruno",
+      "south_sf",
+      "daly_city",
+      "san_carlos",
+      "belmont",
       "san_francisco",
       "fremont",
-      "berkeley"
+      "newark",
+      "union_city",
+      "hayward",
+      "san_leandro",
+      "alameda",
+      "oakland",
+      "berkeley",
+      "richmond",
+      "walnut_creek",
+      "concord",
+      "pleasanton",
+      "dublin",
+      "livermore",
+      "san_ramon",
+      "danville"
     ],
     "details": "Club Card member price. Friday flash sale.",
     "detailsZh": "Club Card 会员价。周五闪购。"
@@ -509,9 +756,20 @@
     "locations": [
       "san_jose",
       "cupertino",
+      "los_altos",
+      "campbell",
+      "los_gatos",
       "palo_alto",
+      "redwood_city",
+      "san_mateo",
       "san_francisco",
-      "oakland"
+      "fremont",
+      "oakland",
+      "berkeley",
+      "walnut_creek",
+      "pleasanton",
+      "dublin",
+      "san_ramon"
     ],
     "details": "Bakery department. Baked fresh daily.",
     "detailsZh": "烘焙区。每日新鲜烘焙。"
@@ -536,7 +794,8 @@
       "santa_clara",
       "milpitas",
       "fremont",
-      "oakland"
+      "oakland",
+      "san_francisco"
     ],
     "details": "Multi-buy discount available.",
     "detailsZh": "多买多优惠。"
@@ -561,9 +820,27 @@
       "sunnyvale",
       "santa_clara",
       "cupertino",
+      "milpitas",
+      "mountain_view",
+      "campbell",
+      "morgan_hill",
+      "gilroy",
+      "redwood_city",
+      "san_mateo",
+      "san_bruno",
+      "south_sf",
+      "daly_city",
       "san_francisco",
+      "fremont",
+      "hayward",
+      "san_leandro",
       "oakland",
-      "hayward"
+      "richmond",
+      "walnut_creek",
+      "concord",
+      "pleasanton",
+      "dublin",
+      "livermore"
     ],
     "details": "Cartwheel offer in Target app.",
     "detailsZh": "Target App 中 Cartwheel 优惠。"
@@ -589,8 +866,15 @@
       "mountain_view",
       "redwood_city",
       "san_francisco",
+      "daly_city",
+      "south_sf",
       "fremont",
-      "richmond"
+      "hayward",
+      "richmond",
+      "danville",
+      "livermore",
+      "gilroy",
+      "foster_city"
     ],
     "details": "Monthly coupon book deal. Member only.",
     "detailsZh": "月度优惠券册活动。仅限会员。"
@@ -615,8 +899,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 50% off.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一件，第二件半价。"
@@ -639,8 +928,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 50% off.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一件，第二件半价。"
@@ -663,8 +957,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 50% off.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一件，第二件半价。"
@@ -687,8 +986,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 50% off.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一件，第二件半价。"
@@ -711,8 +1015,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 free.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一送一。"
@@ -735,8 +1044,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 free.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一送一。"
@@ -759,8 +1073,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 free.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一送一。"
@@ -783,8 +1102,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 free.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一送一。"
@@ -807,8 +1131,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 free.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一送一。"
@@ -831,8 +1160,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 free.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一送一。"
@@ -855,8 +1189,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 50% off.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一件，第二件半价。"
@@ -879,8 +1218,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 free.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一送一。"
@@ -903,8 +1247,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. was $14.99.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。原价$14.99。"
@@ -929,8 +1278,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. was $7.49.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。原价$7.49。"
@@ -955,8 +1309,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. was $1.79.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。原价$1.79。"
@@ -979,8 +1338,13 @@
       "sunnyvale",
       "santa_clara",
       "mountain_view",
+      "campbell",
+      "los_gatos",
       "san_mateo",
-      "fremont"
+      "fremont",
+      "dublin",
+      "pleasanton",
+      "san_ramon"
     ],
     "details": "Sprouts Farmers Market weekly special. Buy 1, get 1 50% off.",
     "detailsZh": "Sprouts Farmers Market 每周特惠。买一件，第二件半价。"

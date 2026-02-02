@@ -10,6 +10,7 @@
 | Phase 2 | Interactive Map | Done |
 | Phase 3 | Costco Scraper (standalone) | Done |
 | Phase 4 | Scraper Framework + Multi-Store | Done |
+| Phase 4.5 | Scope Expansion (categories, cities, images, zip search) | Done |
 | Phase 5 | Safeway & H Mart Scrapers | Planned |
 | Phase 6 | Whole Foods Scraper | Planned |
 | Phase 7 | 99 Ranch (LLM Vision) | Planned |
@@ -31,8 +32,8 @@
 - [x] Deal modal for detail view
 - [x] Footer with disclaimer
 - [x] State management (React Context + useReducer + localStorage persistence)
-- [x] Sample data: 25 deals across 9 stores, 10 categories
-- [x] 22 Bay Area cities in 4 regions
+- [x] Sample data: 25 deals across 9 stores
+- [x] Cities and categories (expanded in Phase 4.5)
 - [x] Type definitions (Deal, Store, Category, FilterState, etc.)
 
 ---
@@ -103,6 +104,22 @@
   - Manual dispatch
   - Auto-commit deals.json changes
   - Translation skipped in CI (no claude CLI)
+
+---
+
+## Phase 4.5 — Scope Expansion
+
+**Status: Done**
+
+- [x] Categories expanded from 10 → 19 (added electronics, clothing, health, bakery, personal care, outdoor, auto, office, other)
+- [x] Scope changed from grocery-only to all supermarket deals
+- [x] Default category fallback changed from "pantry" to "other"
+- [x] Cities expanded from 22 → 41 Bay Area cities (added Los Altos, Campbell, Saratoga, Los Gatos, Morgan Hill, Gilroy, Menlo Park, Foster City, Burlingame, San Bruno, San Carlos, Belmont, Half Moon Bay, Newark, San Leandro, Alameda, Walnut Creek, Concord, Pleasanton, Dublin, Livermore, San Ramon, Danville, South SF)
+- [x] Store city coverage expanded across all 9 stores
+- [x] Address search now supports zip codes (via Nominatim `postalcode` param)
+- [x] Product image support: `imageUrl` field on Deal type, DealCard shows thumbnail
+- [x] SproutsScraper captures product images by walking DOM tree from h3 elements
+- [x] Updated translation files (app title, tagline, search placeholder)
 
 ---
 

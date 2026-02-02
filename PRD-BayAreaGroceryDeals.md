@@ -1,6 +1,6 @@
-# PRD: Bay Area Grocery Deals (湾区省钱宝)
+# PRD: Bay Area Deals (湾区省钱宝)
 
-> **Version:** 1.1
+> **Version:** 1.2
 > **Last Updated:** February 1, 2026
 > **Author:** [Your Name]
 > **Status:** In Progress
@@ -10,12 +10,12 @@
 ## 1. Executive Summary
 
 ### 1.1 Product Vision
-打造一个专注于 Bay Area 的 grocery 优惠信息聚合平台，帮助当地居民（尤其是华人社区）轻松发现超市折扣，省时省钱。
+打造一个专注于 Bay Area 的超市优惠信息聚合平台，帮助当地居民（尤其是华人社区）轻松发现所有超市折扣（不限于食品杂货），省时省钱。
 
-Build a grocery deals aggregation platform focused on the Bay Area, helping local residents (especially the Chinese community) easily discover supermarket discounts and save time and money.
+Build a deals aggregation platform focused on Bay Area supermarkets, helping local residents (especially the Chinese community) easily discover all supermarket discounts (not limited to groceries — includes electronics, clothing, health, and more).
 
 ### 1.2 Product Name
-- **English:** Bay Area Grocery Deals
+- **English:** Bay Area Deals
 - **中文:** 湾区省钱宝
 
 ### 1.3 Target Launch
@@ -98,7 +98,7 @@ Bay Area has a large, price-conscious population with high smartphone adoption. 
 |------------|---------|----------|-------------|
 | F-001 | **Deal Listing** | P0 | Display grocery deals in card format with price, discount %, store, validity period |
 | F-002 | **Store Filter** | P0 | Filter deals by store (Costco, Safeway, 99 Ranch, H Mart, Whole Foods, Trader Joe's, Target, Sprouts, Walmart) |
-| F-003 | **Category Filter** | P0 | Filter by category (Produce, Meat & Seafood, Dairy, Pantry, Snacks, Beverages, Frozen, Household, Baby, Pet) |
+| F-003 | **Category Filter** | P0 | Filter by 19 categories (Produce, Meat & Seafood, Dairy, Bakery, Pantry, Snacks, Beverages, Frozen, Household, Personal Care, Electronics, Clothing, Health, Baby, Pet, Outdoor, Auto, Office, Other) |
 | F-004 | **Search** | P0 | Full-text search across deal titles and descriptions |
 | F-005 | **Bilingual UI** | P0 | Toggle between English and 简体中文 interface |
 | F-006 | **Location Setting** | P1 | Set preferred city (default: Palo Alto), show relevant store locations |
@@ -128,7 +128,7 @@ Bay Area has a large, price-conscious population with high smartphone adoption. 
 | `details_zh` | string | No | Additional details in Chinese |
 | `locations` | array | Yes | Applicable store locations |
 | `source_url` | string | No | Link to original deal source |
-| `image_url` | string | No | Product image URL |
+| `image_url` | string | No | Product image URL (scraped from store pages when available) |
 | `created_at` | datetime | Yes | When deal was added |
 | `updated_at` | datetime | Yes | Last update timestamp |
 
@@ -303,13 +303,22 @@ bay-area-grocery-deals/
     "produce": "Produce",
     "meat": "Meat & Seafood",
     "dairy": "Dairy & Eggs",
+    "bakery": "Bakery",
     "pantry": "Pantry",
     "snacks": "Snacks",
     "beverages": "Beverages",
     "frozen": "Frozen",
     "household": "Household",
+    "personal_care": "Personal Care",
+    "electronics": "Electronics",
+    "clothing": "Clothing & Apparel",
+    "health": "Health & Wellness",
     "baby": "Baby",
-    "pet": "Pet"
+    "pet": "Pet",
+    "outdoor": "Outdoor & Garden",
+    "auto": "Auto & Garage",
+    "office": "Office & School",
+    "other": "Other"
   },
   "deal": {
     "hot": "HOT",
@@ -353,13 +362,22 @@ bay-area-grocery-deals/
     "produce": "蔬果",
     "meat": "肉类海鲜",
     "dairy": "乳制品蛋类",
+    "bakery": "烘焙",
     "pantry": "食品杂货",
     "snacks": "零食",
     "beverages": "饮料",
     "frozen": "冷冻食品",
     "household": "家居用品",
+    "personal_care": "个人护理",
+    "electronics": "电子产品",
+    "clothing": "服装鞋帽",
+    "health": "健康保健",
     "baby": "母婴",
-    "pet": "宠物"
+    "pet": "宠物",
+    "outdoor": "户外园艺",
+    "auto": "汽车用品",
+    "office": "办公文具",
+    "other": "其他"
   },
   "deal": {
     "hot": "热门",
@@ -391,25 +409,14 @@ bay-area-grocery-deals/
 
 #### 5.5.1 Supported Locations (Bay Area Cities)
 
-| City | Region | Default |
-|------|--------|---------|
-| Palo Alto | South Bay | ✅ Yes |
-| Mountain View | South Bay | |
-| Sunnyvale | South Bay | |
-| Santa Clara | South Bay | |
-| San Jose | South Bay | |
-| Cupertino | South Bay | |
-| Fremont | East Bay | |
-| Milpitas | South Bay | |
-| Redwood City | Peninsula | |
-| San Mateo | Peninsula | |
-| Foster City | Peninsula | |
-| Daly City | Peninsula | |
-| South San Francisco | Peninsula | |
-| San Francisco | SF | |
-| Oakland | East Bay | |
-| Berkeley | East Bay | |
-| Richmond | East Bay | |
+41 Bay Area cities across 4 regions:
+
+| Region | Cities |
+|--------|--------|
+| **South Bay** (12) | San Jose, Sunnyvale, Santa Clara, Cupertino, Milpitas, Mountain View, Los Altos, Campbell, Saratoga, Los Gatos, Morgan Hill, Gilroy |
+| **Peninsula** (12) | Palo Alto (default), Menlo Park, Redwood City, San Mateo, Foster City, Burlingame, San Bruno, South SF, Daly City, San Carlos, Belmont, Half Moon Bay |
+| **San Francisco** (1) | San Francisco |
+| **East Bay** (16) | Fremont, Newark, Union City, Hayward, San Leandro, Alameda, Oakland, Berkeley, Richmond, Walnut Creek, Concord, Pleasanton, Dublin, Livermore, San Ramon, Danville |
 
 #### 5.5.2 Location Logic
 - Store user's selected city in localStorage
@@ -640,7 +647,7 @@ Phase 3 (Monetization) - Ongoing
 
 ## 11. Open Questions
 
-- [ ] Should we include non-grocery deals (e.g., CVS, Walgreens pharmacy)?
+- [x] ~~Should we include non-grocery deals?~~ → Yes, scope expanded to all supermarket deals (electronics, clothing, health, etc.)
 - [ ] How to handle store-specific loyalty program deals (e.g., Safeway Club Card)?
 - [ ] Should deals include clickable links to store websites/apps?
 - [ ] Consider integration with Instacart/delivery services?
@@ -664,55 +671,28 @@ Phase 3 (Monetization) - Ongoing
 | Sprouts | — | Weekly ad, app coupons | Focus on organic/natural |
 | Walmart | 沃尔玛 | Rollbacks, app deals | Price match policy |
 
-### B. Category Taxonomy
+### B. Category Taxonomy (19 Categories)
 
 ```
-├── Produce (蔬果)
-│   ├── Fresh Fruits
-│   ├── Fresh Vegetables
-│   └── Organic Produce
-├── Meat & Seafood (肉类海鲜)
-│   ├── Beef
-│   ├── Pork
-│   ├── Chicken
-│   ├── Seafood
-│   └── Plant-based
-├── Dairy & Eggs (乳制品蛋类)
-│   ├── Milk
-│   ├── Cheese
-│   ├── Yogurt
-│   └── Eggs
-├── Pantry (食品杂货)
-│   ├── Rice & Grains
-│   ├── Pasta & Noodles
-│   ├── Cooking Oil
-│   ├── Sauces & Condiments
-│   └── Canned Goods
-├── Snacks (零食)
-│   ├── Chips & Crackers
-│   ├── Cookies & Candy
-│   └── Nuts & Dried Fruit
-├── Beverages (饮料)
-│   ├── Water
-│   ├── Juice
-│   ├── Soda
-│   ├── Coffee & Tea
-│   └── Alcohol
-├── Frozen (冷冻食品)
-│   ├── Frozen Meals
-│   ├── Ice Cream
-│   └── Frozen Produce
-├── Household (家居用品)
-│   ├── Cleaning Supplies
-│   ├── Paper Products
-│   └── Laundry
-├── Baby (母婴)
-│   ├── Diapers
-│   ├── Baby Food
-│   └── Formula
-└── Pet (宠物)
-    ├── Dog Food
-    └── Cat Food
+├── Produce (蔬果) — Fresh fruits, vegetables, organic produce
+├── Meat & Seafood (肉类海鲜) — Beef, pork, chicken, seafood, plant-based
+├── Dairy & Eggs (乳制品蛋类) — Milk, cheese, yogurt, eggs
+├── Bakery (烘焙) — Bread, pastries, cakes
+├── Pantry (食品杂货) — Rice, grains, pasta, oils, sauces, canned goods
+├── Snacks (零食) — Chips, crackers, cookies, candy, nuts
+├── Beverages (饮料) — Water, juice, soda, coffee, tea, alcohol
+├── Frozen (冷冻食品) — Frozen meals, ice cream, frozen produce
+├── Household (家居用品) — Cleaning supplies, paper products, laundry
+├── Personal Care (个人护理) — Shampoo, soap, skincare, cosmetics
+├── Electronics (电子产品) — TVs, computers, phones, appliances, cables
+├── Clothing (服装鞋帽) — Apparel, shoes, accessories
+├── Health (健康保健) — Vitamins, supplements, medicine, first aid
+├── Baby (母婴) — Diapers, baby food, formula, toys
+├── Pet (宠物) — Dog food, cat food, pet supplies
+├── Outdoor (户外园艺) — Garden, patio, grills, camping
+├── Auto (汽车用品) — Motor oil, tires, car accessories
+├── Office (办公文具) — Supplies, printer ink, school supplies
+└── Other (其他) — Uncategorized items
 ```
 
 ---
@@ -723,6 +703,7 @@ Phase 3 (Monetization) - Ongoing
 |---------|------|--------|---------|
 | 1.0 | Feb 1, 2025 | — | Initial PRD |
 | 1.1 | Feb 1, 2026 | — | Updated data pipeline: automated scraper framework, file structure with scripts/, Map components |
+| 1.2 | Feb 1, 2026 | — | Scope expanded from grocery-only to all supermarket deals; 10→19 categories; 22→41 cities; zip code search; product image support |
 
 ---
 
