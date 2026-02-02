@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "湾区超市折扣",
-    "tagline": "湾区最全超市折扣信息，每周更新"
+    "tagline": "湾区最全超市打折信息，每周更新"
   },
   "header": {
     "language": "中文",
@@ -39,7 +39,7 @@
     "lastUpdated": "最近更新：{{date}}"
   },
   "map": {
-    "searchAddress": "搜索地址...",
+    "searchAddress": "输入地址或邮编...",
     "radius": "范围",
     "miles": "{{count}} 英里",
     "showMap": "显示地图",

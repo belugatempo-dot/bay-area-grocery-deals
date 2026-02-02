@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Bay Area Grocery Deals",
-    "tagline": "Best grocery deals in the Bay Area, updated weekly"
+    "title": "Bay Area Deals",
+    "tagline": "Best supermarket deals in the Bay Area, updated weekly"
   },
   "header": {
     "language": "EN",
@@ -39,7 +39,7 @@
     "lastUpdated": "Last updated: {{date}}"
   },
   "map": {
-    "searchAddress": "Search address...",
+    "searchAddress": "Address or zip code...",
     "radius": "Radius",
     "miles": "{{count}} miles",
     "showMap": "Show Map",

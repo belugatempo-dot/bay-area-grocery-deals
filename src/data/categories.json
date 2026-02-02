@@ -8,5 +8,14 @@
   { "id": "frozen", "name": "Frozen", "nameZh": "冷冻食品", "icon": "🧊" },
   { "id": "pantry", "name": "Pantry", "nameZh": "干货调料", "icon": "🫙" },
   { "id": "household", "name": "Household", "nameZh": "家居日用", "icon": "🧹" },
-  { "id": "personal", "name": "Personal Care", "nameZh": "个人护理", "icon": "🧴" }
+  { "id": "personal", "name": "Personal Care", "nameZh": "个人护理", "icon": "🧴" },
+  { "id": "electronics", "name": "Electronics", "nameZh": "电子产品", "icon": "📱" },
+  { "id": "clothing", "name": "Clothing & Shoes", "nameZh": "服饰鞋包", "icon": "👕" },
+  { "id": "health", "name": "Health & Pharmacy", "nameZh": "健康保健", "icon": "💊" },
+  { "id": "baby", "name": "Baby & Kids", "nameZh": "母婴儿童", "icon": "👶" },
+  { "id": "pet", "name": "Pet", "nameZh": "宠物用品", "icon": "🐾" },
+  { "id": "outdoor", "name": "Sports & Outdoor", "nameZh": "运动户外", "icon": "⛺" },
+  { "id": "auto", "name": "Auto & Garage", "nameZh": "汽车车库", "icon": "🚗" },
+  { "id": "office", "name": "Office & School", "nameZh": "办公文具", "icon": "📎" },
+  { "id": "other", "name": "Other", "nameZh": "其他", "icon": "🏷️" }
 ]

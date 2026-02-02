@@ -45,6 +45,7 @@ export interface Deal {
   locations: string[];
   details?: string;
   detailsZh?: string;
+  imageUrl?: string;
 }
 
 export type BayAreaRegion = 'south_bay' | 'peninsula' | 'sf' | 'east_bay';

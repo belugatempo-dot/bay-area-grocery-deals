@@ -63,9 +63,22 @@ export default function DealCard({ deal }: DealCardProps) {
         <span className={`ml-auto text-xs ${expiryColor}`}>{expiryLabel}</span>
       </div>
 
-      {/* Title & description */}
-      <h3 className="text-sm font-semibold text-gray-900 sm:text-base">{title}</h3>
-      <p className="mt-0.5 text-xs text-gray-500">{description}</p>
+      {/* Title & description (with optional image) */}
+      <div className="flex gap-3">
+        {deal.imageUrl && (
+          <img
+            src={deal.imageUrl}
+            alt={title}
+            className="h-16 w-16 flex-shrink-0 rounded-lg object-cover sm:h-20 sm:w-20"
+            loading="lazy"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+        )}
+        <div className="min-w-0 flex-1">
+          <h3 className="text-sm font-semibold text-gray-900 sm:text-base">{title}</h3>
+          <p className="mt-0.5 text-xs text-gray-500">{description}</p>
+        </div>
+      </div>
 
       {/* Price row */}
       <div className="mt-3 flex items-baseline gap-2">

@@ -4,62 +4,62 @@
     "name": "Costco",
     "nameZh": "Costco 好市多",
     "color": "#E31837",
-    "cities": ["san_jose", "sunnyvale", "mountain_view", "redwood_city", "san_francisco", "daly_city", "fremont", "hayward", "richmond"]
+    "cities": ["san_jose", "sunnyvale", "mountain_view", "redwood_city", "san_francisco", "daly_city", "south_sf", "fremont", "hayward", "richmond", "danville", "livermore", "gilroy", "foster_city"]
   },
   {
     "id": "safeway",
     "name": "Safeway",
     "nameZh": "Safeway",
     "color": "#E21A2C",
-    "cities": ["san_jose", "sunnyvale", "santa_clara", "mountain_view", "palo_alto", "redwood_city", "san_mateo", "san_francisco", "daly_city", "fremont", "hayward", "oakland", "berkeley", "richmond", "union_city", "milpitas", "cupertino"]
+    "cities": ["san_jose", "sunnyvale", "santa_clara", "cupertino", "milpitas", "mountain_view", "los_altos", "campbell", "saratoga", "los_gatos", "palo_alto", "menlo_park", "redwood_city", "san_mateo", "foster_city", "burlingame", "san_bruno", "south_sf", "daly_city", "san_carlos", "belmont", "san_francisco", "fremont", "newark", "union_city", "hayward", "san_leandro", "alameda", "oakland", "berkeley", "richmond", "walnut_creek", "concord", "pleasanton", "dublin", "livermore", "san_ramon", "danville"]
   },
   {
     "id": "whole_foods",
     "name": "Whole Foods",
     "nameZh": "Whole Foods 全食",
     "color": "#00674B",
-    "cities": ["san_jose", "cupertino", "palo_alto", "redwood_city", "san_mateo", "san_francisco", "fremont", "oakland", "berkeley"]
+    "cities": ["san_jose", "cupertino", "los_altos", "campbell", "los_gatos", "palo_alto", "redwood_city", "san_mateo", "san_francisco", "fremont", "oakland", "berkeley", "walnut_creek", "pleasanton", "dublin", "san_ramon"]
   },
   {
     "id": "ranch99",
     "name": "99 Ranch",
     "nameZh": "大华超市",
     "color": "#D4262E",
-    "cities": ["san_jose", "milpitas", "cupertino", "mountain_view", "daly_city", "fremont", "richmond", "union_city"]
+    "cities": ["san_jose", "milpitas", "cupertino", "mountain_view", "daly_city", "fremont", "newark", "richmond", "union_city", "foster_city", "concord", "dublin", "pleasanton"]
   },
   {
     "id": "hmart",
     "name": "H Mart",
     "nameZh": "H Mart 韩亚龙",
     "color": "#E4002B",
-    "cities": ["san_jose", "santa_clara", "milpitas", "fremont", "oakland"]
+    "cities": ["san_jose", "santa_clara", "milpitas", "fremont", "oakland", "san_francisco"]
   },
   {
     "id": "trader_joes",
     "name": "Trader Joe's",
     "nameZh": "Trader Joe's 缺德舅",
     "color": "#DA291C",
-    "cities": ["san_jose", "sunnyvale", "cupertino", "mountain_view", "palo_alto", "redwood_city", "san_mateo", "san_francisco", "fremont", "oakland", "berkeley"]
+    "cities": ["san_jose", "sunnyvale", "cupertino", "campbell", "los_gatos", "mountain_view", "palo_alto", "menlo_park", "redwood_city", "san_mateo", "san_carlos", "san_francisco", "daly_city", "fremont", "oakland", "berkeley", "walnut_creek", "concord", "pleasanton", "dublin", "livermore", "san_ramon", "danville"]
   },
   {
     "id": "target",
     "name": "Target",
     "nameZh": "Target 塔吉特",
     "color": "#CC0000",
-    "cities": ["san_jose", "sunnyvale", "santa_clara", "cupertino", "mountain_view", "redwood_city", "san_mateo", "san_francisco", "daly_city", "fremont", "hayward", "oakland"]
+    "cities": ["san_jose", "sunnyvale", "santa_clara", "cupertino", "milpitas", "mountain_view", "campbell", "morgan_hill", "gilroy", "redwood_city", "san_mateo", "san_bruno", "south_sf", "daly_city", "san_francisco", "fremont", "hayward", "san_leandro", "oakland", "richmond", "walnut_creek", "concord", "pleasanton", "dublin", "livermore"]
   },
   {
     "id": "sprouts",
     "name": "Sprouts",
     "nameZh": "Sprouts",
     "color": "#3E7D1E",
-    "cities": ["san_jose", "sunnyvale", "santa_clara", "mountain_view", "san_mateo", "fremont"]
+    "cities": ["san_jose", "sunnyvale", "santa_clara", "mountain_view", "campbell", "los_gatos", "san_mateo", "fremont", "dublin", "pleasanton", "san_ramon"]
   },
   {
     "id": "walmart",
     "name": "Walmart",
     "nameZh": "Walmart 沃尔玛",
     "color": "#0071CE",
-    "cities": ["san_jose", "milpitas", "mountain_view", "fremont", "hayward", "richmond", "union_city"]
+    "cities": ["san_jose", "milpitas", "mountain_view", "gilroy", "morgan_hill", "fremont", "hayward", "union_city", "richmond", "san_leandro", "livermore", "dublin"]
   }
 ]

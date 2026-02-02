@@ -9,6 +9,11 @@ const VIEWBOX = '-122.6,37.1,-121.7,38.0';
 
 let lastRequestTime = 0;
 
+// Check if the query looks like a US zip code (5 digits or 5+4)
+function isZipCode(query: string): boolean {
+  return /^\d{5}(-\d{4})?$/.test(query.trim());
+}
+
 export async function geocodeAddress(
   query: string
 ): Promise<GeocodingResult[]> {
@@ -22,14 +27,22 @@ export async function geocodeAddress(
   }
   lastRequestTime = Date.now();
 
+  const trimmed = query.trim();
   const params = new URLSearchParams({
-    q: query,
     format: 'json',
     addressdetails: '1',
     limit: '5',
-    viewbox: VIEWBOX,
-    bounded: '1',
   });
+
+  if (isZipCode(trimmed)) {
+    // Use postalcode search for zip codes — more accurate
+    params.set('postalcode', trimmed.split('-')[0]);
+    params.set('country', 'us');
+  } else {
+    params.set('q', trimmed);
+    params.set('viewbox', VIEWBOX);
+    params.set('bounded', '1');
+  }
 
   const res = await fetch(
     `https://nominatim.openstreetmap.org/search?${params}`,

@@ -5,7 +5,8 @@ const COSTCO_URL = 'https://www.costco.com/warehouse-savings.html';
 
 const COSTCO_LOCATIONS = [
   'san_jose', 'sunnyvale', 'mountain_view', 'redwood_city',
-  'san_francisco', 'fremont', 'hayward', 'richmond',
+  'san_francisco', 'daly_city', 'south_sf', 'fremont',
+  'hayward', 'richmond', 'danville', 'livermore', 'gilroy', 'foster_city',
 ];
 
 interface RawItem {

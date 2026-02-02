@@ -4,7 +4,8 @@ import { BaseScraper, type ScrapedDeal } from './BaseScraper.js';
 const SPROUTS_URL = 'https://www.sprouts.com/weekly-ad/';
 
 const SPROUTS_LOCATIONS = [
-  'san_jose', 'sunnyvale', 'santa_clara', 'mountain_view', 'san_mateo', 'fremont',
+  'san_jose', 'sunnyvale', 'santa_clara', 'mountain_view', 'campbell',
+  'los_gatos', 'san_mateo', 'fremont', 'dublin', 'pleasanton', 'san_ramon',
 ];
 
 interface RawSproutsItem {
@@ -12,6 +13,7 @@ interface RawSproutsItem {
   price: number;
   promoText: string;
   size: string;
+  imageUrl: string;
 }
 
 export class SproutsScraper extends BaseScraper {
@@ -65,7 +67,7 @@ export class SproutsScraper extends BaseScraper {
     //   "OrganicCurrent price: $6.99$699Buy 1, get 1 50% offOrganic Strawberries★★★★★(502)1 lb container"
     // We parse each h3's textContent to extract: product name, price, promo, and size.
     return await page.evaluate(() => {
-      const items: { name: string; price: number; promoText: string; size: string }[] = [];
+      const items: { name: string; price: number; promoText: string; size: string; imageUrl: string }[] = [];
       const seen = new Set<string>();
 
       const headings = document.querySelectorAll('h3');
@@ -127,8 +129,20 @@ export class SproutsScraper extends BaseScraper {
         name = name.replace(/^(?:per\s+\w+)?\$[\d,.]+/i, '').trim();
         if (!name || name.length < 3) continue;
 
+        // Try to find product image near the h3 element
+        let imageUrl = '';
+        let container = h3.parentElement;
+        for (let i = 0; i < 6 && container; i++) {
+          const img = container.querySelector('img[src*="product"], img[src*="item"], img[src*="cdn"]');
+          if (img) {
+            imageUrl = img.getAttribute('src') || '';
+            break;
+          }
+          container = container.parentElement;
+        }
+
         seen.add(name);
-        items.push({ name, price, promoText, size });
+        items.push({ name, price, promoText, size, imageUrl });
       }
 
       return items;
@@ -136,7 +150,7 @@ export class SproutsScraper extends BaseScraper {
   }
 
   private toScrapedDeal(item: RawSproutsItem, startDate: string, expiryDate: string): ScrapedDeal | null {
-    const { name, price, promoText, size } = item;
+    const { name, price, promoText, size, imageUrl } = item;
 
     let originalPrice: number;
     let salePrice: number;
@@ -194,6 +208,7 @@ export class SproutsScraper extends BaseScraper {
       expiryDate,
       categoryHints: [],
       details: `Sprouts Farmers Market weekly special. ${promoText}.`,
+      imageUrl: imageUrl || undefined,
     };
   }
 }

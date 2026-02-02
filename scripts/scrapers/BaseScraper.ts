@@ -14,6 +14,7 @@ export interface ScrapedDeal {
   expiryDate: string;
   categoryHints?: string[];
   details?: string;
+  imageUrl?: string;
 }
 
 export interface ScraperResult {
@@ -75,6 +76,7 @@ export abstract class BaseScraper {
       locations: this.locations,
       details: d.details,
       detailsZh: d.detailsZh,
+      imageUrl: d.imageUrl,
     };
   }
 }
