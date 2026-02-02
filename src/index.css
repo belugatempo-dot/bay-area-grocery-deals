@@ -1,0 +1,54 @@
+@import "leaflet/dist/leaflet.css";
+@import "tailwindcss";
+
+@theme {
+  --color-orange: #F97316;
+  --color-orange-light: #FFF7ED;
+  --color-orange-dark: #EA580C;
+  --color-green: #22C55E;
+  --color-green-light: #F0FDF4;
+  --color-red: #EF4444;
+  --color-red-light: #FEF2F2;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+  --font-sans: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-gray-50);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Leaflet popup overrides */
+.leaflet-popup-content-wrapper {
+  font-family: var(--font-sans);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-popup-content {
+  margin: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: #374151;
+}
+
+.leaflet-popup-tip {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* User location marker tint */
+.leaflet-marker-user {
+  filter: hue-rotate(200deg) saturate(1.5);
+}

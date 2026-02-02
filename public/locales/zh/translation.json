@@ -1,0 +1,56 @@
+{
+  "app": {
+    "title": "湾区超市折扣",
+    "tagline": "湾区最全超市折扣信息，每周更新"
+  },
+  "header": {
+    "language": "中文",
+    "languageAlt": "EN"
+  },
+  "location": {
+    "label": "选择城市",
+    "all": "全湾区",
+    "south_bay": "南湾",
+    "peninsula": "半岛",
+    "sf": "旧金山",
+    "east_bay": "东湾"
+  },
+  "search": {
+    "placeholder": "搜索折扣..."
+  },
+  "filters": {
+    "stores": "超市",
+    "categories": "分类",
+    "clearAll": "清除筛选"
+  },
+  "deals": {
+    "hot": "热门",
+    "expiresIn": "剩{{days}}天",
+    "expiresToday": "今日到期！",
+    "expired": "已过期",
+    "validPeriod": "{{start}} - {{end}} (剩{{days}}天)",
+    "validPeriodExpired": "{{start}} - {{end}} (已过期)",
+    "validPeriodToday": "{{start}} - {{end}} (今日到期！)",
+    "off": "省{{percent}}%",
+    "showDetails": "详情",
+    "hideDetails": "收起",
+    "availableAt": "可购买门店：",
+    "noDeals": "未找到相关折扣，请调整筛选条件。",
+    "lastUpdated": "最近更新：{{date}}"
+  },
+  "map": {
+    "searchAddress": "搜索地址...",
+    "radius": "范围",
+    "miles": "{{count}} 英里",
+    "showMap": "显示地图",
+    "hideMap": "隐藏地图",
+    "clearLocation": "清除",
+    "dealsInCity": "{{city}}有 {{count}} 条折扣",
+    "noResults": "{{radius}} 英里内未找到折扣",
+    "yourLocation": "你的位置"
+  },
+  "footer": {
+    "disclaimer": "价格和库存可能因门店而异。折扣信息来自公开渠道，可能无法反映实时变化。",
+    "madeWith": "为湾区购物达人用 ❤️ 打造"
+  }
+}

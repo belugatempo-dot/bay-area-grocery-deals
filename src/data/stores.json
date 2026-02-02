@@ -1,0 +1,65 @@
+[
+  {
+    "id": "costco",
+    "name": "Costco",
+    "nameZh": "Costco 好市多",
+    "color": "#E31837",
+    "cities": ["san_jose", "sunnyvale", "mountain_view", "redwood_city", "san_francisco", "daly_city", "fremont", "hayward", "richmond"]
+  },
+  {
+    "id": "safeway",
+    "name": "Safeway",
+    "nameZh": "Safeway",
+    "color": "#E21A2C",
+    "cities": ["san_jose", "sunnyvale", "santa_clara", "mountain_view", "palo_alto", "redwood_city", "san_mateo", "san_francisco", "daly_city", "fremont", "hayward", "oakland", "berkeley", "richmond", "union_city", "milpitas", "cupertino"]
+  },
+  {
+    "id": "whole_foods",
+    "name": "Whole Foods",
+    "nameZh": "Whole Foods 全食",
+    "color": "#00674B",
+    "cities": ["san_jose", "cupertino", "palo_alto", "redwood_city", "san_mateo", "san_francisco", "fremont", "oakland", "berkeley"]
+  },
+  {
+    "id": "ranch99",
+    "name": "99 Ranch",
+    "nameZh": "大华超市",
+    "color": "#D4262E",
+    "cities": ["san_jose", "milpitas", "cupertino", "mountain_view", "daly_city", "fremont", "richmond", "union_city"]
+  },
+  {
+    "id": "hmart",
+    "name": "H Mart",
+    "nameZh": "H Mart 韩亚龙",
+    "color": "#E4002B",
+    "cities": ["san_jose", "santa_clara", "milpitas", "fremont", "oakland"]
+  },
+  {
+    "id": "trader_joes",
+    "name": "Trader Joe's",
+    "nameZh": "Trader Joe's 缺德舅",
+    "color": "#DA291C",
+    "cities": ["san_jose", "sunnyvale", "cupertino", "mountain_view", "palo_alto", "redwood_city", "san_mateo", "san_francisco", "fremont", "oakland", "berkeley"]
+  },
+  {
+    "id": "target",
+    "name": "Target",
+    "nameZh": "Target 塔吉特",
+    "color": "#CC0000",
+    "cities": ["san_jose", "sunnyvale", "santa_clara", "cupertino", "mountain_view", "redwood_city", "san_mateo", "san_francisco", "daly_city", "fremont", "hayward", "oakland"]
+  },
+  {
+    "id": "sprouts",
+    "name": "Sprouts",
+    "nameZh": "Sprouts",
+    "color": "#3E7D1E",
+    "cities": ["san_jose", "sunnyvale", "santa_clara", "mountain_view", "san_mateo", "fremont"]
+  },
+  {
+    "id": "walmart",
+    "name": "Walmart",
+    "nameZh": "Walmart 沃尔玛",
+    "color": "#0071CE",
+    "cities": ["san_jose", "milpitas", "mountain_view", "fremont", "hayward", "richmond", "union_city"]
+  }
+]

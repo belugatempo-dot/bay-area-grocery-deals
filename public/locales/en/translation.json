@@ -1,0 +1,56 @@
+{
+  "app": {
+    "title": "Bay Area Grocery Deals",
+    "tagline": "Best grocery deals in the Bay Area, updated weekly"
+  },
+  "header": {
+    "language": "EN",
+    "languageAlt": "中文"
+  },
+  "location": {
+    "label": "Your City",
+    "all": "All Bay Area",
+    "south_bay": "South Bay",
+    "peninsula": "Peninsula",
+    "sf": "San Francisco",
+    "east_bay": "East Bay"
+  },
+  "search": {
+    "placeholder": "Search deals..."
+  },
+  "filters": {
+    "stores": "Stores",
+    "categories": "Categories",
+    "clearAll": "Clear All"
+  },
+  "deals": {
+    "hot": "HOT",
+    "expiresIn": "{{days}}d left",
+    "expiresToday": "Expires today!",
+    "expired": "Expired",
+    "validPeriod": "{{start}} - {{end}} ({{days}}d left)",
+    "validPeriodExpired": "{{start}} - {{end}} (Expired)",
+    "validPeriodToday": "{{start}} - {{end}} (Expires today!)",
+    "off": "{{percent}}% OFF",
+    "showDetails": "Details",
+    "hideDetails": "Hide",
+    "availableAt": "Available at:",
+    "noDeals": "No deals found. Try adjusting your filters.",
+    "lastUpdated": "Last updated: {{date}}"
+  },
+  "map": {
+    "searchAddress": "Search address...",
+    "radius": "Radius",
+    "miles": "{{count}} miles",
+    "showMap": "Show Map",
+    "hideMap": "Hide Map",
+    "clearLocation": "Clear",
+    "dealsInCity": "{{count}} deals in {{city}}",
+    "noResults": "No deals found within {{radius}} miles",
+    "yourLocation": "Your location"
+  },
+  "footer": {
+    "disclaimer": "Prices and availability may vary by location. Deals are sourced from publicly available information and may not reflect real-time changes.",
+    "madeWith": "Made with ❤️ for Bay Area shoppers"
+  }
+}

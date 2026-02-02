@@ -1,0 +1,12 @@
+[
+  { "id": "produce", "name": "Produce", "nameZh": "蔬果", "icon": "🥬" },
+  { "id": "meat", "name": "Meat & Seafood", "nameZh": "肉类海鲜", "icon": "🥩" },
+  { "id": "dairy", "name": "Dairy & Eggs", "nameZh": "乳制品蛋类", "icon": "🥛" },
+  { "id": "bakery", "name": "Bakery", "nameZh": "烘焙", "icon": "🍞" },
+  { "id": "snacks", "name": "Snacks", "nameZh": "零食", "icon": "🍿" },
+  { "id": "beverages", "name": "Beverages", "nameZh": "饮料", "icon": "🧃" },
+  { "id": "frozen", "name": "Frozen", "nameZh": "冷冻食品", "icon": "🧊" },
+  { "id": "pantry", "name": "Pantry", "nameZh": "干货调料", "icon": "🫙" },
+  { "id": "household", "name": "Household", "nameZh": "家居日用", "icon": "🧹" },
+  { "id": "personal", "name": "Personal Care", "nameZh": "个人护理", "icon": "🧴" }
+]
