@@ -10,10 +10,12 @@ export default defineConfig({
     include: ['src/**/*.test.{ts,tsx}', 'scripts/**/*.test.ts'],
     coverage: {
       provider: 'v8',
-      include: ['src/utils/**', 'scripts/utils/**', 'scripts/scrapers/**', 'src/components/**'],
+      include: ['src/utils/**', 'scripts/utils/**', 'scripts/scrapers/**', 'src/components/**', 'src/context/**', 'src/hooks/**'],
       thresholds: {
         'src/utils/**': { statements: 90 },
         'scripts/utils/**': { statements: 85 },
+        'src/context/**': { statements: 90 },
+        'src/hooks/**': { statements: 80 },
       },
     },
   },

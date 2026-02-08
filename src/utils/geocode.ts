@@ -10,7 +10,7 @@ const VIEWBOX = '-122.6,37.1,-121.7,38.0';
 let lastRequestTime = 0;
 
 // Check if the query looks like a US zip code (5 digits or 5+4)
-function isZipCode(query: string): boolean {
+export function isZipCode(query: string): boolean {
   return /^\d{5}(-\d{4})?$/.test(query.trim());
 }
 

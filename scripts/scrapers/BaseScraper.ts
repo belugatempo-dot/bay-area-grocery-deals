@@ -54,7 +54,7 @@ export abstract class BaseScraper {
     return deals;
   }
 
-  private toDeal(d: TranslatedDeal, index: number): Deal {
+  protected toDeal(d: TranslatedDeal, index: number): Deal {
     const categoryId = assignCategory(d.title, d.categoryHints);
     const savings = d.originalPrice - d.salePrice;
 

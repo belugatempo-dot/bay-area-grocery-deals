@@ -1,6 +1,6 @@
-import { spawn } from 'child_process';
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
-import { resolve } from 'path';
+import { spawn } from 'node:child_process';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { resolve } from 'node:path';
 import type { ScrapedDeal } from '../scrapers/BaseScraper.js';
 
 const CACHE_DIR = resolve(import.meta.dirname, '../.cache');
@@ -33,7 +33,7 @@ function saveCache(cache: Record<string, TranslatedFields>): void {
   writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2) + '\n');
 }
 
-function cacheKey(deal: ScrapedDeal): string {
+export function cacheKey(deal: ScrapedDeal): string {
   return `${deal.title}||${deal.description}||${deal.unit ?? ''}||${deal.details ?? ''}`;
 }
 
@@ -158,12 +158,12 @@ ${JSON.stringify(textsToTranslate)}`;
   return results;
 }
 
-function stripMarkdownFencing(text: string): string {
+export function stripMarkdownFencing(text: string): string {
   // Remove ```json ... ``` or ``` ... ``` wrapping
   return text.replace(/^```(?:json)?\s*\n?/i, '').replace(/\n?```\s*$/i, '').trim();
 }
 
-function parseClaudeResponse(stdout: string): TranslatedFields[] {
+export function parseClaudeResponse(stdout: string): TranslatedFields[] {
   try {
     // First try: direct JSON array
     const direct = JSON.parse(stdout);
@@ -189,7 +189,7 @@ function parseClaudeResponse(stdout: string): TranslatedFields[] {
   return [];
 }
 
-function fallbackTranslate(deal: ScrapedDeal): TranslatedDeal {
+export function fallbackTranslate(deal: ScrapedDeal): TranslatedDeal {
   return {
     ...deal,
     titleZh: deal.title,

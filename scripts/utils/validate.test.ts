@@ -191,6 +191,17 @@ describe('validate', () => {
     });
   });
 
+  describe('error display truncation', () => {
+    it('shows "and N more" when more than 5 deals fail validation', () => {
+      const invalidDeals = Array.from({ length: 7 }, (_, i) =>
+        makeDeal({ title: `Deal ${i}`, originalPrice: -1 })
+      );
+      const { errors } = validate(invalidDeals);
+      expect(errors).toHaveLength(7);
+      expect(console.log).toHaveBeenCalledWith(expect.stringContaining('and 2 more'));
+    });
+  });
+
   describe('edge cases', () => {
     it('handles empty deals array', () => {
       const { valid, errors } = validate([]);
