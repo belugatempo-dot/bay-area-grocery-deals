@@ -12,11 +12,14 @@
     "scrape:single": "tsx scripts/scrape-single.ts",
     "scrape:costco": "tsx scripts/scrape-single.ts --store=costco",
     "scrape:sprouts": "tsx scripts/scrape-single.ts --store=sprouts",
+    "scrape:safeway": "tsx scripts/scrape-single.ts --store=safeway",
+    "scrape:hmart": "tsx scripts/scrape-single.ts --store=hmart",
     "scrape:costco:legacy": "tsx scripts/scrape-costco.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "tryout": "npm run scrape:all && npm run test:run && npm run build && npm run dev"
   },
   "dependencies": {
     "i18next": "^25.8.0",

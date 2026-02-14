@@ -38,6 +38,7 @@ npm run dev          # Start dev server at localhost:5173
 | `npm run scrape:all` | Run all store scrapers |
 | `npm run scrape:costco` | Scrape Costco deals only |
 | `npm run scrape:sprouts` | Scrape Sprouts deals only |
+| `npm run tryout` | Full local test: scrape → test → build → dev server |
 
 ## Scraper Framework
 
