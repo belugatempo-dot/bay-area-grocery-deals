@@ -1,9 +1,11 @@
 import { CostcoScraper } from './scrapers/CostcoScraper.js';
 import { SproutsScraper } from './scrapers/SproutsScraper.js';
+import { SafewayScraper } from './scrapers/SafewayScraper.js';
+import { HMartScraper } from './scrapers/HMartScraper.js';
 import { mergeToDealsJson } from './utils/merge.js';
 import type { Deal } from '../src/types/index.js';
 
-const scrapers = [new CostcoScraper(), new SproutsScraper()];
+const scrapers = [new CostcoScraper(), new SproutsScraper(), new SafewayScraper(), new HMartScraper()];
 
 async function main() {
   console.log('=== Bay Area Grocery Deals Scraper ===\n');

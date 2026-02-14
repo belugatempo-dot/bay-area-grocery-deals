@@ -1,6 +1,6 @@
 # Progress — Bay Area Grocery Deals
 
-> Last Updated: February 1, 2026
+> Last Updated: February 14, 2026
 
 ## Phase Summary
 
@@ -11,7 +11,7 @@
 | Phase 3 | Costco Scraper (standalone) | Done |
 | Phase 4 | Scraper Framework + Multi-Store | Done |
 | Phase 4.5 | Scope Expansion (categories, cities, images, zip search) | Done |
-| Phase 5 | Safeway & H Mart Scrapers | Planned |
+| Phase 5 | Safeway & H Mart Scrapers | Done |
 | Phase 6 | Whole Foods Scraper | Planned |
 | Phase 7 | 99 Ranch (LLM Vision) | Planned |
 
@@ -123,10 +123,39 @@
 
 ---
 
-## Planned — Phase 5: Safeway & H Mart
+## Phase 5 — Safeway & H Mart Scrapers
 
-- [ ] `SafewayScraper` — Reverse-engineer mobile API (GitHub has working examples)
-- [ ] `HMartScraper` — Scrape hmart.com/weekly-ads page
+**Status: Done**
+
+### SafewayScraper (`scripts/scrapers/SafewayScraper.ts`)
+- [x] Playwright scraper for `safeway.com/weeklyad/` with anti-bot measures
+- [x] Multiple CSS selector fallback strategy + `page.evaluate()` fallback
+- [x] Price parsing: "2 for $5", "CLUB PRICE $X.XX", "$X.XX ea", "Save $X", "Was/Now", "Buy N Get M Free"
+- [x] Date parsing: "Valid MM/DD - MM/DD", "MM/DD/YY - MM/DD/YY", year boundary handling
+- [x] Wed-to-Tue weekly cycle date calculation (`getSafewayWeekDates`)
+- [x] 38 Bay Area city locations (highest coverage store)
+- [x] 39 tests covering all date, price, and deal conversion logic
+- [x] npm script: `scrape:safeway`
+
+### HMartScraper (`scripts/scrapers/HMartScraper.ts`)
+- [x] Playwright scraper for `hmart.com/weekly-ads/northern-california`
+- [x] Content type detection: structured HTML vs. image-based flyers
+- [x] Graceful fallback: image-based ads return empty array with warning (OCR deferred to Phase 7)
+- [x] Price parsing: "$X.XX/lb", "X for $Y", "$X.XX ea", "$X.XX", "XX% off"
+- [x] Fri-to-Thu weekly cycle date calculation (`getHMartWeekDates`)
+- [x] 6 Bay Area city locations
+- [x] 31 tests covering date, content detection, price, and deal conversion logic
+- [x] npm script: `scrape:hmart`
+
+### Registration & Integration
+- [x] `scrape-all.ts` updated: runs Costco, Sprouts, Safeway, H Mart sequentially
+- [x] `scrape-single.ts` updated: `--store=safeway` and `--store=hmart` supported
+- [x] **552 tests** across 34 files, all passing (70 new tests)
+- [x] All coverage thresholds met
+- [x] No new lint errors
+- [x] Production build succeeds
+
+---
 
 ## Planned — Phase 6: Whole Foods
 
