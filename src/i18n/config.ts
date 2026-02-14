@@ -17,7 +17,7 @@ i18n
       caches: ['localStorage'],
     },
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json',
+      loadPath: `${import.meta.env.BASE_URL}locales/{{lng}}/translation.json`,
     },
     interpolation: {
       escapeValue: false,
