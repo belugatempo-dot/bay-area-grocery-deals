@@ -14,12 +14,14 @@
     "scrape:sprouts": "tsx scripts/scrape-single.ts --store=sprouts",
     "scrape:safeway": "tsx scripts/scrape-single.ts --store=safeway",
     "scrape:hmart": "tsx scripts/scrape-single.ts --store=hmart",
+    "scrape:ranch99": "tsx scripts/scrape-single.ts --store=ranch99",
     "scrape:costco:legacy": "tsx scripts/scrape-costco.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
-    "tryout": "npm run scrape:all && npm run test:run && npm run build && npm run dev"
+    "tryout": "npm run scrape:all && npm run test:run && npm run build && npm run dev",
+    "start": "bash scripts/start-dev.sh"
   },
   "dependencies": {
     "i18next": "^25.8.0",
@@ -50,6 +52,7 @@
     "globals": "^16.5.0",
     "happy-dom": "^20.4.0",
     "playwright": "^1.50.0",
+    "rebrowser-pw": "npm:rebrowser-playwright@1.52.0",
     "tailwindcss": "^4.1.18",
     "tsx": "^4.19.0",
     "typescript": "~5.9.3",

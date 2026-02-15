@@ -6,6 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # Development
+npm start                # Scrape → dev server (auto-open) → test watcher
 npm run dev              # Vite dev server at localhost:5173
 npm run build            # tsc -b && vite build (type-check then bundle)
 npm run lint             # ESLint (flat config, v9)
@@ -42,6 +43,8 @@ Bilingual (EN/ZH) React SPA + automated Playwright scraper framework. Two indepe
 - **Pipeline**: `scrape() → validate() → translateBatch() → assignCategory() → merge into deals.json`
 - **Translation**: Calls `claude -p` CLI for batch EN→ZH translation. File cache at `scripts/.cache/translations.json`. Skipped in CI (`CI=true` env var) — English used as fallback.
 - **Adding a scraper**: Create `scripts/scrapers/FooScraper.ts` extending `BaseScraper`, implement `scrape()` returning `ScrapedDeal[]`, register in `scrape-all.ts` and `scrape-single.ts`.
+- **Costco anti-bot**: CostcoScraper uses `rebrowser-pw` (aliased `npm:rebrowser-playwright@1.52.0`) instead of regular `playwright` to bypass Akamai Bot Manager TLS fingerprinting. Other scrapers use standard `playwright`. Both packages have their own Chromium installs.
+- **OCR**: `scripts/utils/ocr.ts` uses Claude Vision (via `claude -p` CLI) to extract deals from image-based flyers. Cache at `scripts/.cache/ocr.json`. Skipped in CI. Used by Ranch99Scraper (and available for HMart Phase 7).
 - **Categorization**: Keyword matching across title + description → 19 categories, default fallback is `"other"`.
 - **Merge logic** (`merge.ts`): Replaces all deals for the scraped store, removes expired deals across all stores, reassigns sequential IDs (`{storeId}-001`).
 
