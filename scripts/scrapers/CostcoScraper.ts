@@ -1,4 +1,4 @@
-import { chromium, type Page } from 'playwright';
+import { chromium, type Page } from 'rebrowser-pw';
 import { BaseScraper, type ScrapedDeal } from './BaseScraper.js';
 
 const COSTCO_URL = 'https://www.costco.com/warehouse-savings.html';
@@ -14,22 +14,49 @@ interface RawItem {
   text: string;
 }
 
+/** Error patterns that indicate bot detection or network issues — not worth retrying. */
+const KNOWN_BLOCK_PATTERNS = [
+  'ERR_HTTP2_PROTOCOL_ERROR',
+  'net::ERR_',
+  'Timeout',
+  'Navigation failed',
+];
+
+function isKnownBlockError(error: unknown): boolean {
+  const msg = error instanceof Error ? error.message : String(error);
+  return KNOWN_BLOCK_PATTERNS.some((p) => msg.includes(p));
+}
+
 export class CostcoScraper extends BaseScraper {
   readonly storeId = 'costco';
   readonly locations = COSTCO_LOCATIONS;
 
   async scrape(): Promise<ScrapedDeal[]> {
-    const browser = await chromium.launch({
-      headless: true,
-      args: ['--disable-blink-features=AutomationControlled'],
-    });
+    let browser;
+    try {
+      browser = await chromium.launch({
+        headless: true,
+        args: [
+          '--disable-blink-features=AutomationControlled',
+          '--no-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-infobars',
+          '--window-size=1920,1080',
+        ],
+      });
+    } catch (err) {
+      console.log(`  [costco] Browser launch failed: ${err instanceof Error ? err.message : err}`);
+      return [];
+    }
 
     try {
       const context = await browser.newContext({
         userAgent:
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         viewport: { width: 1920, height: 1080 },
         locale: 'en-US',
+        timezoneId: 'America/Los_Angeles',
+        extraHTTPHeaders: { 'Accept-Language': 'en-US,en;q=0.9' },
       });
 
       const page = await context.newPage();
@@ -41,6 +68,9 @@ export class CostcoScraper extends BaseScraper {
         waitUntil: 'domcontentloaded',
         timeout: 60000,
       });
+
+      // Human-like mouse movement
+      await page.mouse.move(300 + Math.random() * 600, 200 + Math.random() * 400);
 
       // Wait for JS rendering
       await sleep(3000 + Math.random() * 2000);
@@ -57,6 +87,12 @@ export class CostcoScraper extends BaseScraper {
       return rawItems
         .map((item) => this.parseItem(item))
         .filter((d): d is ScrapedDeal => d !== null);
+    } catch (err) {
+      if (isKnownBlockError(err)) {
+        console.log(`  [costco] Blocked or connection error: ${err instanceof Error ? err.message : err}`);
+        return [];
+      }
+      throw err;
     } finally {
       await browser.close();
     }

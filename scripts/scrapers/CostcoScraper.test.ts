@@ -1,5 +1,29 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { parseDates, parsePrice } from './CostcoScraper';
+
+// --- Mock rebrowser-pw for scrape() tests ---
+const mockClose = vi.fn();
+const mockGoto = vi.fn();
+const mockMouse = { move: vi.fn() };
+const mockEvaluate = vi.fn();
+const mockWaitForSelector = vi.fn();
+const mockLocator = vi.fn().mockReturnValue({ count: vi.fn().mockResolvedValue(0) });
+const mockNewPage = vi.fn().mockResolvedValue({
+  goto: mockGoto,
+  mouse: mockMouse,
+  evaluate: mockEvaluate,
+  waitForSelector: mockWaitForSelector,
+  locator: mockLocator,
+});
+const mockNewContext = vi.fn().mockResolvedValue({ newPage: mockNewPage });
+const mockLaunch = vi.fn().mockResolvedValue({
+  newContext: mockNewContext,
+  close: mockClose,
+});
+
+vi.mock('rebrowser-pw', () => ({
+  chromium: { launch: (...args: unknown[]) => mockLaunch(...args) },
+}));
 
 describe('CostcoScraper parsing', () => {
   describe('parseDates', () => {
@@ -161,5 +185,101 @@ describe('CostcoScraper parsing', () => {
       // Two prices: 29.99 and 8 → sorted: 29.99, 8
       expect(result).toEqual({ originalPrice: 29.99, salePrice: 8 });
     });
+  });
+});
+
+describe('CostcoScraper.scrape() error handling', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    // Restore default mock implementations
+    mockLaunch.mockResolvedValue({
+      newContext: mockNewContext,
+      close: mockClose,
+    });
+    mockGoto.mockResolvedValue(undefined);
+    mockLocator.mockReturnValue({ count: vi.fn().mockResolvedValue(0) });
+  });
+
+  it('returns [] when page.goto throws ERR_HTTP2_PROTOCOL_ERROR', async () => {
+    const { CostcoScraper } = await import('./CostcoScraper');
+    mockGoto.mockRejectedValueOnce(new Error('net::ERR_HTTP2_PROTOCOL_ERROR'));
+
+    const scraper = new CostcoScraper();
+    const result = await scraper.scrape();
+
+    expect(result).toEqual([]);
+    expect(mockClose).toHaveBeenCalled();
+  });
+
+  it('returns [] when page.goto throws net::ERR_CONNECTION_RESET', async () => {
+    const { CostcoScraper } = await import('./CostcoScraper');
+    mockGoto.mockRejectedValueOnce(new Error('net::ERR_CONNECTION_RESET'));
+
+    const scraper = new CostcoScraper();
+    const result = await scraper.scrape();
+
+    expect(result).toEqual([]);
+    expect(mockClose).toHaveBeenCalled();
+  });
+
+  it('returns [] when page.goto throws Timeout error', async () => {
+    const { CostcoScraper } = await import('./CostcoScraper');
+    mockGoto.mockRejectedValueOnce(new Error('Timeout 60000ms exceeded'));
+
+    const scraper = new CostcoScraper();
+    const result = await scraper.scrape();
+
+    expect(result).toEqual([]);
+    expect(mockClose).toHaveBeenCalled();
+  });
+
+  it('returns [] when Navigation failed', async () => {
+    const { CostcoScraper } = await import('./CostcoScraper');
+    mockGoto.mockRejectedValueOnce(new Error('Navigation failed because page was closed'));
+
+    const scraper = new CostcoScraper();
+    const result = await scraper.scrape();
+
+    expect(result).toEqual([]);
+    expect(mockClose).toHaveBeenCalled();
+  });
+
+  it('returns [] when browser launch fails', async () => {
+    const { CostcoScraper } = await import('./CostcoScraper');
+    mockLaunch.mockRejectedValueOnce(new Error('Failed to launch browser'));
+
+    const scraper = new CostcoScraper();
+    const result = await scraper.scrape();
+
+    expect(result).toEqual([]);
+  });
+
+  it('re-throws unknown errors', async () => {
+    const { CostcoScraper } = await import('./CostcoScraper');
+    mockGoto.mockRejectedValueOnce(new Error('Something completely unexpected'));
+
+    const scraper = new CostcoScraper();
+    await expect(scraper.scrape()).rejects.toThrow('Something completely unexpected');
+    expect(mockClose).toHaveBeenCalled();
+  });
+
+  it('returns [] when no product tiles are found (no crash)', async () => {
+    vi.useFakeTimers();
+    try {
+      const { CostcoScraper } = await import('./CostcoScraper');
+      // Default mock already returns count=0 for all selectors
+
+      const scraper = new CostcoScraper();
+      const promise = scraper.scrape();
+
+      // Advance past all sleep() calls
+      await vi.advanceTimersByTimeAsync(20000);
+      const result = await promise;
+
+      expect(result).toEqual([]);
+      expect(mockClose).toHaveBeenCalled();
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });

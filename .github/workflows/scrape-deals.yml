@@ -21,6 +21,9 @@ jobs:
 
       - run: npx playwright install chromium
 
+      - name: Install rebrowser-playwright Chromium
+        run: node ./node_modules/rebrowser-pw/cli.js install chromium
+
       - name: Run scrapers
         run: npm run scrape:all
         env:
