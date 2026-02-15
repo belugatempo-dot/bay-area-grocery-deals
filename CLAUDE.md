@@ -19,8 +19,14 @@ npx vitest run src/utils/filterDeals.test.ts   # Run a single test file
 
 # Scrapers (require Playwright + Chromium)
 npm run scrape:all       # All stores sequentially
-npm run scrape:costco    # Costco only
+npm run scrape:costco    # Costco only (uses rebrowser-pw)
 npm run scrape:sprouts   # Sprouts only
+npm run scrape:safeway   # Safeway only
+npm run scrape:hmart     # H Mart only
+npm run scrape:ranch99   # Ranch 99 only (uses OCR)
+
+# Smoke test
+npm run tryout           # Scrape → test → build → dev server
 ```
 
 ## Architecture
